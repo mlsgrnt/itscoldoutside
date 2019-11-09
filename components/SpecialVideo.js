@@ -12,7 +12,7 @@ export default ({ temperature }) => {
 
     const synth = window.speechSynthesis;
     // console.log(e.target.currentTime);
-    if (video.currentTime > 1.2 && video.currentTime < 2) {
+    if (video.currentTime > 1.35 && video.currentTime < 2) {
       video.pause();
 
       video.currentTime = 2.16;
