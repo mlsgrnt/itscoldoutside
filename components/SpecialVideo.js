@@ -46,6 +46,7 @@ export default ({ temperature }) => {
           : ''}
       </h2>
       <video
+        playsinline
         src="/baby.mp4"
         onTimeUpdate={handleTimeUpdate}
         ref={handleMounting}
