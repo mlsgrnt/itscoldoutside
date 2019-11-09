@@ -6,16 +6,16 @@ export default ({ temperature }) => {
   const [paused, setPaused] = useState(true);
 
   const handleTimeUpdate = e => {
-    if (video.currentTime > 32.5) {
+    if (video.currentTime > 4.5) {
       setShowMessage(true);
     }
 
     const synth = window.speechSynthesis;
     // console.log(e.target.currentTime);
-    if (video.currentTime > 29.2 && video.currentTime < 30) {
+    if (video.currentTime > 1.2 && video.currentTime < 2) {
       video.pause();
 
-      video.currentTime = 30.06;
+      video.currentTime = 2.16;
       const utter = new SpeechSynthesisUtterance(`${temperature} degrees`);
       utter.onend = () => {
         video.play();
@@ -25,11 +25,9 @@ export default ({ temperature }) => {
   };
   const handleMounting = element => {
     setVideo(element);
-    video.currentTime = 26;
   };
   const startVideo = () => {
     if (video.paused) {
-      video.currentTime = 26;
       video.play();
       setPaused(false);
     }
@@ -46,7 +44,7 @@ export default ({ temperature }) => {
           : ''}
       </h2>
       <video
-        playsinline
+        playsInline
         src="/baby.mp4"
         onTimeUpdate={handleTimeUpdate}
         ref={handleMounting}
